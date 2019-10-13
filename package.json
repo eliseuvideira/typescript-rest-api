@@ -1,0 +1,21 @@
+{
+  "name": "stock-management-rest-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eliseu Videira <eliseuvideira1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.3",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/tsc",
+    "start": "node_modules/.bin/nodemon src/app.ts",
+    "test": "node_modules/.bin/jest"
+  }
+}
