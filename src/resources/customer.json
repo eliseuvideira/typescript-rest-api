@@ -1,0 +1,8 @@
+{
+  "name": "customer",
+  "address": {
+    "street": "1",
+    "city": "Los Angeles",
+    "state": "CA"
+  }
+}

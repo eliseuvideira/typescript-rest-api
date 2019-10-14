@@ -1,7 +1,7 @@
-☐ Create model for Product
-☐ Create model for Order
+✔ Create model for Product
+✔ Create model for Order
 ☐ Create model for Stock
-☐ Create model for Customer
-☐ Create model for User
+✔ Create model for Customer
+✔ Create model for User
 ✔ Add Mongoose to the project
 ✔ Add dotenv

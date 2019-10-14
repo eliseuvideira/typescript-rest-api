@@ -1,6 +1,6 @@
 import http from 'http';
-import mongoose from 'mongoose';
 import app from './app';
+import Database from './helpers/database';
 
 const port = process.env.PORT || 3000;
 app.set('port', port);
@@ -33,26 +33,9 @@ const onListening = () => {
   console.log(`Listening on port ${addr.port}`);
 };
 
-const startDatabase = async () => {
-  try {
-    if (!process.env.MONGODB_URI) {
-      throw new Error('env variable `MONGODB_URI` cannot be empty or null');
-    }
-    const uri: string = process.env.MONGODB_URI as string;
-    await mongoose.connect(uri, {
-      useCreateIndex: true,
-      useFindAndModify: false,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-  } catch (err) {
-    throw err;
-  }
-};
-
 const startServer = async () => {
   try {
-    await startDatabase();
+    await Database.connect();
     server.listen(port);
     server.on('error', onError);
     server.on('listening', onListening);
@@ -62,5 +45,6 @@ const startServer = async () => {
 };
 
 startServer().catch((err) => {
+  // tslint:disable-next-line: no-console
   console.error(err);
 });
